@@ -1,0 +1,14 @@
+{
+  "name": "Omeagle Chat Bot",
+  "version": "0.1.0",
+  "description": "A bot that help add friends on omeagle",
+  "permissions": ["activeTab", "declarativeContent", "storage", "*://*/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "page_action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
