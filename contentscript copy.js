@@ -16,7 +16,7 @@ const contentScript = ({ omegle_text, key, omegle_count }) => {
 
     // Deduct Key Value
     const { data } = await deductKey(key);
-    chrome.runtime.sendMessage({ omegle_count: data.count }, function () {});
+    // chrome.runtime.sendMessage({ omegle_count: data.count }, function () {});
 
     // Disconnect from room
     disconnectButton.click();
@@ -69,9 +69,7 @@ const deductKey = async (key) => {
   }
 };
 
-const start = () => {
-  let interval = null;
-
+const start = (interval) => {
   chrome.runtime.onMessage.addListener(async function (
     request,
     sender,
@@ -86,7 +84,6 @@ const start = () => {
       // console.log("data:", data);
       const omegle_count = data.count;
 
-      // used for displaying the count for the first time
       chrome.storage.sync.set({ omegle_count }, function () {
         console.log("count saved successfully");
       });
@@ -115,10 +112,6 @@ const start = () => {
           );
         }
         contentScript({ omegle_text, key, omegle_count });
-
-        interval = setInterval(() => {
-          contentScript({ omegle_text, key, omegle_count });
-        }, 10 * 1000);
       });
     } else {
       if (!interval) {
@@ -138,7 +131,9 @@ const throwError = (errmsg, alertmsg, interval) => {
   throw Error(errmsg);
 };
 
-start();
+
+
+start()
 
 // function WatchStartFunc() {
 //   let interval = null;

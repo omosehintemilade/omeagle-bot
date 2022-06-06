@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+
+        font-size: 16px;
+        padding: 5px 10px;
+        min-width: 400px;
+        min-height: 400px;
+        background-color: #fff;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      header img {
+        width: 40px;
+        margin-right: 5px;
+      }
+      header h2 {
+        text-align: center;
+        color: #ff7f00;
+      }
+      header h2 span {
+        color: #6cb5ff;
+      }
+
+      .logo__wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      .slotcounts {
+        font-size: 20px;
+        margin-right: 15px;
+      }
+
+      .slotcounts span {
+        color: #6cb5ff;
+      }
+
+      input {
+        display: block;
+        border-radius: 6px;
+        height: 30px;
+        padding: 5px 6px;
+        width: 100%;
+        margin-bottom: 5px;
+        border: 1px solid #d9d9d9;
+        outline: none;
+      }
+      label {
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+      .checkbox__wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+      .checkbox__wrapper input {
+        display: inline;
+        margin-right: 5px;
+        margin-bottom: 0;
+        width: auto;
+        height: auto;
+      }
+      .btns_wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      button {
+        background-color: #273df2;
+        margin-right: 10px;
+        margin-top: 5px;
+        padding: 6px 10px;
+        color: white;
+        outline: #273df2;
+        border-radius: 6px;
+        border: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo__wrapper">
+          <img src="./logo.png" alt="logo.png" />
+          <h2>Omegle<span>BOT</span></h2>
+        </div>
+
+        <div class="slotcounts">
+          <p>slots: <span class="count">0</span></p>
+        </div>
+      </nav>
+    </header>
+
+    <label for="text_input">Paste in the desired text</label>
+    <input name="text_input" placeholder="Paste here..." />
+
+    <label for="text_input">Enter secret key</label>
+    <input
+      type="password"
+      name="secret"
+      placeholder="Paste secret key here..."
+    />
+
+    <div class="checkbox__wrapper">
+      <input type="checkbox" name="save_secret" />
+      <p>Save secret for future use?</p>
+    </div>
+    <div class="btns_wrapper">
+      <button class="save_button">Update Settings</button>
+      <button class="start_button">Start Bombing!</button>
+      <button class="stop_button">Take A Break!</button>
+    </div>
+  </body>
+  <script src="popup.js"></script>
+</html>

@@ -1,6 +1,6 @@
 {
-  "name": "Omeagle Chat Bot",
-  "version": "0.1.0",
+  "name": "Omegle Chat Bot",
+  "version": "0.1.1",
   "description": "A bot that help add friends on omeagle",
   "permissions": ["activeTab", "declarativeContent", "storage", "*://*/*"],
   "background": {
